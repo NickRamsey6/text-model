@@ -1,5 +1,6 @@
 import pandas as pd
-
+import nltk
+w = nltk.word_tokenize
 
 coms = pd.read_csv('~/Desktop/text-model/Coms.csv')
 
@@ -10,4 +11,7 @@ def clean_text(df, column):
 
 coms_cl = clean_text(coms, 'Comment')
 # print(coms['Labels'].value_counts())
-print(coms_cl.head())
+# print(coms_cl.head())
+
+coms['Token'] = coms['Comment'].apply(w)
+print(coms['Token'])
