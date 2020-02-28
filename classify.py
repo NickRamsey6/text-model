@@ -22,7 +22,7 @@ coms['Token'] = coms['Comment'].apply(w)
 
 x = coms_cl['Comment'].tolist()
 y = coms_cl['Class_Label'].tolist()
-x_train,x_test,y_train,y_test = train_test_split(x,y,test_size = 0.9)
+x_train,x_test,y_train,y_test = train_test_split(x,y,test_size = 0.2)
 bow = CountVectorizer(stop_words={'english'})
 x_train_c = bow.fit_transform(x_train)
 x_test_c = bow.transform(x_test)
